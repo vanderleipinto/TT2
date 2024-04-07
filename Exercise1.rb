@@ -1,15 +1,30 @@
+
+def numeros_divisiveis(x, y, w)
+  # Inicializa um array vazio para armazenar os números divisíveis
+  divisiveis = []
+
+  # Itera de x até y
+  (x..y).each do |num|
+    # Verifica se o número é divisível por w
+    if num % w == 0
+      # Adiciona o número ao array de divisíveis
+      divisiveis << num
+    end
+  end
+
+  # Retorna o array de números divisíveis
+  return divisiveis
+end
+
 puts "Digite o primeiro número"
-n1 = gets.to_i
+x = gets.to_i
 
 puts "Digite o segundo número"
-n2 = gets.to_i
+y = gets.to_i
 
 puts "Digite o terceiro número"
-n3 = gets.to_i
+w = gets.to_i
 
-# for a in n1..n2 do
-#   puts a if a%n3 == 0
-# end
+resultado =  numeros_divisiveis(x,y,w)
 
-(n1..n2).select { |n| puts n if n % n3 == 0 }
-# [2, 4, 6, 8, 10]
+puts "Números divisíveis por #{w} entre #{x} e #{y}: #{resultado}"
